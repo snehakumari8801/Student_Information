@@ -14,7 +14,9 @@ const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
-  const BASE_URL = 'http://localhost:5000'
+  //const BASE_URL = 'http://localhost:5000'
+  const BASE_URL = 'https://student-information-backend.onrender.com';
+
 
 
   const handleChange = (e) => {

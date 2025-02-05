@@ -7,7 +7,10 @@ import axios from "axios";
 const ViewStudent = () => {
   const { id } = useParams();
   const [student, setStudent] = useState(null);
-  const BASE_URL = 'http://localhost:5000'
+
+  //const BASE_URL = 'http://localhost:5000';
+  const BASE_URL = 'https://student-information-backend.onrender.com';
+
 
   useEffect(() => {
     axios.get(`${BASE_URL}/api/students/${id}`)

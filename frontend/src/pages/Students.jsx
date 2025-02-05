@@ -16,7 +16,9 @@ const Students = () => {
     rollNumber: "",
   });
 
-  const BASE_URL = 'http://localhost:5000'
+  //const BASE_URL = 'http://localhost:5000';
+  const BASE_URL = 'https://student-information-backend.onrender.com';
+
 
   //console.log(newStudent);
 
