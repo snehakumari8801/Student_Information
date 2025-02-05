@@ -30,9 +30,19 @@ const Register = () => {
     e.preventDefault();
     setError(""); 
     setSuccess(""); 
+    console.log("Form Data: ", formData);  // Log form data
+
 
     try {
-      const response = await axios.post(`${BASE_URL}/api/auth/register`, formData);
+      const response = await axios.post(`${BASE_URL}/api/auth/register`, formData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      console.log(response);
+      
 
       setSuccess("Registration successful! Redirecting to login...");
       

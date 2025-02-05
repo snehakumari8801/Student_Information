@@ -16,11 +16,15 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    console.log("Email: ", email, "Password: ", password); 
     try {
       const response = await axios.post(`${BASE_URL}/api/auth/login`, { email, password });
+      console.log(response);
+      
       localStorage.setItem("token", response.data.token);
       window.location.href = "/";
     } catch (err) {
+      console.log(err);
       setError("Invalid credentials. Please check your email and password.");
     }
   };
