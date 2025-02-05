@@ -9,7 +9,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  //const BASE_URL = 'http://localhost:5000';
+  //const BASE_URL = 'http://localhost:3000';
   const BASE_URL = 'https://student-information-backend.onrender.com';
 
 
