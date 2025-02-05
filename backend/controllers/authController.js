@@ -5,6 +5,8 @@ const User = require("../models/User");
 
 exports.registerUser = async (req, res) => {
   const { name, email, password } = req.body;
+  console.log(name);
+  
 
   try {
     // Check if user already exists
@@ -23,7 +25,8 @@ exports.registerUser = async (req, res) => {
     
     // Generate JWT token
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-
+    console.log(token);
+    
     return res.status(201).json({ token });
   } catch (error) {
     console.error(error);
@@ -33,6 +36,10 @@ exports.registerUser = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
+
+   if(!email || !password){
+    console.log("All fields are required");
+   }
 
   try {
     const user = await User.findOne({ email });
